@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cage Wheel | Farm Machinery & Implements</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #171410;
+            color: #eee9dc;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.7;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 22px;
+        }
+
+        h1, h2, h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .accent {
+            color: #c94b35;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-header {
+            border-bottom: 1px solid #d8d0bd;
+            padding-bottom: 18px;
+            margin-bottom: 35px;
+        }
+
+        .section-number {
+            color: #c94b35;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 7vw, 58px);
+            text-transform: uppercase;
+        }
+
+        .hindi-title {
+            margin-top: 10px;
+            color: #cfc6b5;
+            font-size: 18px;
+        }
+
+        .content {
+            font-size: 19px;
+        }
+
+        .content p {
+            margin-bottom: 25px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            margin: 0 auto 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 11vw, 90px);
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #cfc6b5;
+            margin: 15px 0 35px;
+        }
+
+        .university {
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+            font-size: 15px;
+        }
+
+        .authors {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .author {
+            width: 180px;
+        }
+
+        .author img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #c94b35;
+        }
+
+        .author-name {
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .author-id {
+            font-size: 13px;
+            color: #aaa294;
+        }
+
+        .main-image {
+            width: 100%;
+            display: block;
+            margin: 35px 0 10px;
+        }
+
+        .caption {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #aaa294;
+            text-transform: uppercase;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            border: 1px solid #39342d;
+            padding: 18px;
+            text-align: left;
+        }
+
+        th {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 18px 0 18px 30px;
+            border-bottom: 1px solid #302c27;
+            position: relative;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #c94b35;
+        }
+
+        .steps {
+            counter-reset: step;
+        }
+
+        .step {
+            counter-increment: step;
+            padding: 25px 0 25px 65px;
+            border-bottom: 1px solid #302c27;
+            position: relative;
+        }
+
+        .step::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 25px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #c94b35;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #39342d;
+            padding: 25px;
+        }
+
+        .card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .video-card {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .video-card:hover {
+            border-color: #c94b35;
+        }
+
+        .play {
+            color: #c94b35;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .campus-image {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        footer {
+            border-top: 1px solid #39342d;
+            padding: 40px 0;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa294;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 20px 16px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .content {
+                font-size: 17px;
+            }
+
+            .authors {
+                gap: 15px;
+            }
+
+            .author {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- CONTENT WILL BE ADDED HERE -->
+
+</div>
+
+</body>
+  </html>
