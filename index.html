@@ -1,292 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cage Wheel | Farm Machinery & Implements</title>
+  <title>Cage Wheel | Farm Machinery & Implements</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta
+    name="description"
+    content="An academic assignment on the construction, working principle, uses and advantages of cage wheels in wet and puddled paddy fields."
+  >
 
-        body {
-            background: #171410;
-            color: #eee9dc;
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.7;
-        }
+  <style>
 
-        .page {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px 22px;
-        }
+    /* ==============================
+       RESET & BASIC SETTINGS
+    ============================== */
 
-        h1, h2, h3 {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 400;
-            line-height: 1.2;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .accent {
-            color: #c94b35;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .section {
-            padding: 70px 0;
-        }
+    body {
+      background: #171511;
+      color: #eee9dc;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
 
-        .section-header {
-            border-bottom: 1px solid #d8d0bd;
-            padding-bottom: 18px;
-            margin-bottom: 35px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .section-number {
-            color: #c94b35;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            margin-right: 10px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .section-title {
-            font-size: clamp(30px, 7vw, 58px);
-            text-transform: uppercase;
-        }
+    .container {
+      width: min(100% - 32px, 1050px);
+      margin: auto;
+    }
 
-        .hindi-title {
-            margin-top: 10px;
-            color: #cfc6b5;
-            font-size: 18px;
-        }
 
-        .content {
-            font-size: 19px;
-        }
+    /* ==============================
+       COLOURS
+    ============================== */
 
-        .content p {
-            margin-bottom: 25px;
-        }
+    :root {
+      --background: #171511;
+      --surface: #211d18;
+      --surface-light: #28231d;
+      --text: #eee9dc;
+      --muted: #bdb5a6;
+      --accent: #c94732;
+      --accent-light: #e05a43;
+      --border: #403a32;
+    }
 
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
 
-        .logo {
-            width: 120px;
-            margin: 0 auto 25px;
-        }
+    /* ==============================
+       COVER
+    ============================== */
 
-        .hero h1 {
-            font-size: clamp(42px, 11vw, 90px);
-            text-transform: uppercase;
-        }
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0;
+    }
 
-        .subtitle {
-            font-size: 20px;
-            color: #cfc6b5;
-            margin: 15px 0 35px;
-        }
+    .cover::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(201, 71, 50, 0.07);
+      top: -180px;
+      right: -180px;
+    }
 
-        .university {
-            font-family: Arial, Helvetica, sans-serif;
-            letter-spacing: 1px;
-            font-size: 15px;
-        }
+    .cover-content {
+      position: relative;
+      z-index: 1;
+    }
 
-        .authors {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
 
-        .author {
-            width: 180px;
-        }
+    /* UNIVERSITY */
 
-        .author img {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid #c94b35;
-        }
+    .university {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 70px;
+    }
 
-        .author-name {
-            margin-top: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    .university-logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+    }
 
-        .author-id {
-            font-size: 13px;
-            color: #aaa294;
-        }
+    .university-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      font-weight: bold;
+    }
 
-        .main-image {
-            width: 100%;
-            display: block;
-            margin: 35px 0 10px;
-        }
+    .university-location {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
 
-        .caption {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color: #aaa294;
-            text-transform: uppercase;
-        }
 
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 30px 0;
-        }
+    /* COVER TITLE */
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 500px;
-        }
+    .cover-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
 
-        th, td {
-            border: 1px solid #39342d;
-            padding: 18px;
-            text-align: left;
-        }
+    .cover h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(55px, 12vw, 110px);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
 
-        th {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 400;
-        }
+    .cover-subtitle {
+      max-width: 720px;
+      font-size: clamp(18px, 3vw, 27px);
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
 
-        ul {
-            list-style: none;
-        }
+    .cover-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 25px;
+    }
 
-        li {
-            padding: 18px 0 18px 30px;
-            border-bottom: 1px solid #302c27;
-            position: relative;
-        }
+    .cover-subject {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-        li::before {
-            content: "—";
-            position: absolute;
-            left: 0;
-            color: #c94b35;
-        }
 
-        .steps {
-            counter-reset: step;
-        }
+    /* AUTHORS */
 
-        .step {
-            counter-increment: step;
-            padding: 25px 0 25px 65px;
-            border-bottom: 1px solid #302c27;
-            position: relative;
-        }
+    .authors {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 600px;
+      margin-top: 35px;
+    }
 
-        .step::before {
-            content: counter(step);
-            position: absolute;
-            left: 0;
-            top: 25px;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #c94b35;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    .author {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px;
+    }
 
-        .cards {
-            display: grid;
-            gap: 20px;
-        }
+    .author-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
 
-        .card {
-            border: 1px solid #39342d;
-            padding: 25px;
-        }
+    .author-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
 
-        .card h3 {
-            font-family: Arial, Helvetica, sans-serif;
-            margin-bottom: 10px;
-        }
+    .author-details {
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-        .video-card {
-            display: block;
-            color: inherit;
-            text-decoration: none;
-            transition: 0.2s;
-        }
 
-        .video-card:hover {
-            border-color: #c94b35;
-        }
+    /* ==============================
+       GENERAL SECTIONS
+    ============================== */
 
-        .play {
-            color: #c94b35;
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
+    section {
+      padding: 80px 0;
+    }
 
-        .campus-image {
-            width: 100%;
-            margin-top: 25px;
-        }
+    .section-heading {
+      margin-bottom: 35px;
+    }
 
-        footer {
-            border-top: 1px solid #39342d;
-            padding: 40px 0;
-            margin-top: 40px;
-            text-align: center;
-            color: #aaa294;
-        }
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(28px, 6vw, 48px);
+      font-weight: 400;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
 
-        @media (max-width: 600px) {
-            .page {
-                padding: 20px 16px;
-            }
+    .section-number {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
 
-            .section {
-                padding: 50px 0;
-            }
+    .section-hindi {
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 8px;
+    }
 
-            .content {
-                font-size: 17px;
-            }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin-top: 20px;
+    }
 
-            .authors {
-                gap: 15px;
-            }
 
-            .author {
-                width: 140px;
-            }
-        }
-    </style>
+    /* ==============================
+       CONTENT
+    ============================== */
+
+    .content {
+      max-width: 900px;
+    }
+
+    .content p {
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+
+    .content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hindi {
+      color: #c7c0b2 !important;
+      font-size: 15px !important;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 28px;
+    }
+
+
+    /* ==============================
+       IMAGE CARD
+    ============================== */
+
+    .image-card {
+      margin-top: 35px;
+      border: 1px solid var(--border);
+      background: #111;
+    }
+
+    .image-card img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+    }
+
+    .caption {
+      padding: 12px 15px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: min(100% - 28px, 1050px);
+      }
+
+      .cover {
+        min-height: auto;
+        padding: 40px 0 60px;
+      }
+
+      .university {
+        margin-bottom: 50px;
+      }
+
+      .university-logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .cover h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .authors {
+        gap: 10px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<div class="page">
 
-    <!-- CONTENT WILL BE ADDED HERE -->
+  <!-- =================================
+       COVER PAGE
+  ================================== -->
 
-</div>
+  <header class="cover">
+
+    <div class="container cover-content">
+
+
+      <!-- UNIVERSITY -->
+
+      <div class="university">
+
+        <img
+          src="images/logo.png"
+          alt="Central University of South Bihar logo"
+          class="university-logo"
+        >
+
+        <div>
+
+          <div class="university-name">
+            Central University of South Bihar
+          </div>
+
+          <div class="university-location">
+            Gaya, Bihar · CUSB
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TITLE -->
+
+      <div class="cover-label">
+        FARM MACHINERY &amp; IMPLEMENTS
+      </div>
+
+      <h1>
+        CAGE<br>
+        WHEEL
+      </h1>
+
+      <div class="cover-subtitle">
+        A traction implement designed for
+        wet and puddled paddy fields
+      </div>
+
+      <div class="cover-divider"></div>
+
+      <div class="cover-subject">
+        Academic Assignment · Construction · Working · Applications
+      </div>
+
+
+      <!-- AUTHORS -->
+
+      <div class="authors">
+
+
+        <div class="author">
+
+          <img
+            src="images/sankar.jpg"
+            alt="Sankar Saha"
+            class="author-photo"
+          >
+
+          <div class="author-name">
+            Sankar Saha
+          </div>
+
+          <div class="author-details">
+            3rd Semester · CUSB2514214083
+          </div>
+
+        </div>
+
+
+        <div class="author">
+
+          <img
+            src="images/shikha.jpg"
+            alt="Shikha Kumari"
+            class="author-photo"
+          >
+
+          <div class="author-name">
+            Shikha Kumari
+          </div>
+
+          <div class="author-details">
+            3rd Semester · CUSB2514114091
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =================================
+       SECTION 01
+       INTRODUCTION
+  ================================== -->
+
+  <section>
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <div class="section-title">
+
+          <span class="section-number">
+            01
+          </span>
+
+          What Is a Cage Wheel
+
+        </div>
+
+        <div class="section-hindi">
+          केज व्हील क्या है
+        </div>
+
+        <div class="divider"></div>
+
+      </div>
+
+
+      <div class="content">
+
+        <p>
+          A cage wheel is a special traction wheel used mainly on
+          tractors and power tillers while working in wet, muddy or
+          puddled agricultural fields.
+        </p>
+
+        <p>
+          Unlike a conventional rubber tyre, a cage wheel has an
+          open steel structure with bars or lugs around its outer
+          circumference. These projections penetrate the soft soil
+          and provide the machine with the grip required to move
+          through waterlogged fields.
+        </p>
+
+        <p>
+          Cage wheels are particularly useful in paddy cultivation,
+          where soil is frequently flooded and prepared into a
+          puddled condition before transplanting rice.
+        </p>
+
+        <p class="hindi">
+          केज व्हील एक विशेष प्रकार का ट्रैक्शन व्हील है जिसका उपयोग
+          मुख्य रूप से ट्रैक्टर और पावर टिलर द्वारा गीली, कीचड़युक्त
+          या पानी से भरी कृषि भूमि में किया जाता है। सामान्य रबर टायर
+          के विपरीत, इसमें खुले स्टील ढांचे और बाहरी हिस्से पर लगे
+          स्टील लग होते हैं। ये लग नरम मिट्टी में धंसकर मशीन को
+          आवश्यक पकड़ प्रदान करते हैं।
+        </p>
+
+      </div>
+
+
+      <div class="image-card">
+
+        <img
+          src="images/tractor-red.jpg"
+          alt="Tractor equipped with cage wheels in a wet paddy field"
+        >
+
+        <div class="caption">
+          Cage wheel application in a wet agricultural field
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       END OF PART 1
+  ================================== -->
 
 </body>
-  </html>
+</html>
